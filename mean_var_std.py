@@ -1,43 +1,42 @@
 import numpy as np
 
 def calculate(list):
-    arr = np.array(list)
-    if arr.shape != (9,):
-        raise ValueError('List must contain nine numbers.')
+
+    if (len(list)!=9):
+        raise ValueError("List must contain 9 numbers.")
     
-    mat = arr.reshape(3,3)
+    ls = np.array(list).reshape(3,3)
 
-    calculations = {
-        'mean': [
-            mat.mean(axis=0).tolist(),
-            mat.mean(axis=1).tolist(),
-            mat.mean()
+    cal = {
+        'mean' :[
+            ls.mean(axis=0).tolist(),
+            ls.mean(axis=1).tolist(),
+            ls.mean()
         ],
-        'variance': [
-            mat.var(axis=0).tolist(),
-            mat.var(axis=1).tolist(),
-            mat.var()
+        'variance':[
+            ls.var(axis=0).tolist(),
+            ls.var(axis=1).tolist(),
+            ls.var()
         ],
-        'standard deviation': [
-            mat.std(axis=0).tolist(),
-            mat.std(axis=1).tolist(),
-            mat.std()
+        'standard deviation':[
+            ls.std(axis=0).tolist(),
+            ls.std(axis=1).tolist(),
+            ls.std()
         ],
-        'max': [
-            mat.max(axis=0).tolist(),
-            mat.max(axis=1).tolist(),
-            mat.max()
+        'max':[
+            ls.max(axis=0).tolist(),
+            ls.max(axis=1).tolist(),
+            ls.max()
         ],
-        'min': [
-            mat.min(axis=0).tolist(),
-            mat.min(axis=1).tolist(),
-            mat.min()
+        'min':[
+            ls.min(axis=0).tolist(),
+            ls.min(axis=1).tolist(),
+            ls.min()
         ],
-        'sum': [
-            mat.sum(axis=0).tolist(),
-            mat.sum(axis=1).tolist(),
-            mat.sum()
-        ],
-
+        'sum':[
+            ls.sum(axis=0).tolist(),
+            ls.sum(axis=1).tolist(),
+            ls.sum()
+        ]
     }
-    return calculations
+    return cal
